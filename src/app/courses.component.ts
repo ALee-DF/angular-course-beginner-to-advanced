@@ -4,12 +4,7 @@ import { Component } from '@angular/core';
     selector: 'courses',
 
     template: `
-        <img [src]=imageUrl />
-        <table>
-            <tr>
-                <td [attr.colspan]="colSpan"></td>
-            </tr>
-        </table>
+        <button class="btn btn-primary">Save</button>
     `
 })
 export class CoursesComponent {
