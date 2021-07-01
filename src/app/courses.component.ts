@@ -4,9 +4,19 @@ import { Component } from '@angular/core';
     selector: 'courses',
 
     template: `
-        <button [style.backgroundColor]="isActive ? 'blue' : 'white'">Save</button>
+        <div (click)="onDivClicked()">
+            <button (click)="onSave($event)">Save</button>
+        </div>
+        
     `
 })
 export class CoursesComponent {
-    isActive = true;    
+    onDivClicked() {
+        console.log('Div was Clicked');
+    }
+
+    onSave($event) {
+        $event.stopPropagation();
+        console.log('Button Was Clicked', $event);
+    }
 }
