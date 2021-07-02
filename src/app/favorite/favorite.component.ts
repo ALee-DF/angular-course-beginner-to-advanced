@@ -1,20 +1,9 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-favorite',
   templateUrl: './favorite.component.html',
-  styles: [
-    `
-.bi {
-  color: green;
-}
-
-.bi-star {
-  background: black;
-}
-    `
-  ],
-  styleUrls: ['./favorite.component.css'],
+  styleUrls: ['./favorite.component.css']
 
 })
 export class FavoriteComponent {
