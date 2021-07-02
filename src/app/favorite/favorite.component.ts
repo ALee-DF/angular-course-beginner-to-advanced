@@ -6,9 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./favorite.component.css']
 })
 export class FavoriteComponent {
-  @Input() isFavorite: boolean;
+  @Input('isFavorite') isSelected: boolean;
 
   onClick() {
-    this.isFavorite = !this.isFavorite;
+    this.isSelected = !this.isSelected;
   }
 }
