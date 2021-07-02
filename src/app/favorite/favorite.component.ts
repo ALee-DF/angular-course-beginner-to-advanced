@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-favorite',
@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./favorite.component.css']
 })
 export class FavoriteComponent {
-  isActive = false;
+  @Input() isFavorite: boolean;
 
   onClick() {
-    this.isActive = !this.isActive;
+    this.isFavorite = !this.isFavorite;
   }
 }
