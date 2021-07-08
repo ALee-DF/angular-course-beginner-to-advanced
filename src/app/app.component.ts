@@ -7,20 +7,25 @@ import { FavoriteChangedEventArgs } from './favorite/favorite.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-course-beginner-to-advanced';
+  courses = [1, 2];
+}
 
-  post = {
-    title: 'Title',
-    isFavorite: true
-  }
 
-  tweet = {
-    body: 'Here is the body of a tweet...',
-    isLiked: true,
-    likesCount: 10
-  }
+// export class AppComponent {
+//   title = 'angular-course-beginner-to-advanced';
 
-  onFavoriteChanged(eventArgs: FavoriteChangedEventArgs) {
-    console.log('Favorite Changed ', eventArgs);
-  }
- }
+//   post = {
+//     title: 'Title',
+//     isFavorite: true
+//   }
+
+//   tweet = {
+//     body: 'Here is the body of a tweet...',
+//     isLiked: true,
+//     likesCount: 10
+//   }
+
+//   onFavoriteChanged(eventArgs: FavoriteChangedEventArgs) {
+//     console.log('Favorite Changed ', eventArgs);
+//   }
+//  }
