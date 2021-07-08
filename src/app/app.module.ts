@@ -12,6 +12,7 @@ import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { TitlecasingComponent } from './titlecasing/titlecasing.component';
 import { TitleCaseExceptPipe } from './titlecaseescept.pipe';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { TitleCaseExceptPipe } from './titlecaseescept.pipe';
     AuthorsComponent,
     FavoriteComponent,
     TitlecasingComponent,
+    PanelComponent,
 
     SummaryPipe,
     TitleCaseExceptPipe
