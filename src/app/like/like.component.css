@@ -1,0 +1,12 @@
+.bi {
+    color: #ccc;
+    cursor: pointer;
+}
+
+.liked {
+    color: deeppink;
+}
+
+.five-rem-font {
+    font-size: 5rem;
+}
