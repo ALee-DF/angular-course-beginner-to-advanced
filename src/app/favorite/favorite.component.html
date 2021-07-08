@@ -1,1 +1,9 @@
-<i (click)="onClick()" class="bi" [class.bi-star-fill]="isSelected" [class.bi-star]="!isSelected" style="cursor: pointer; font-size: 5rem;"></i>
+<i
+    class="bi"
+    [ngClass]="{
+        'bi-star-fill': isSelected,
+        'bi-star': !isSelected
+    }"
+    (click)="onClick()"
+    >
+</i>
