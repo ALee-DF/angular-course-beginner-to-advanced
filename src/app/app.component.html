@@ -1,25 +1,25 @@
-<h1>Hello World</h1>
-<!-- <app-authors></app-authors> -->
-<!-- <courses></courses> -->
-<!-- <app-titlecasing></app-titlecasing> -->
-
-<!-- <app-favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged($event)"></app-favorite> -->
-
-<!-- <bootstrap-panel>
-    <ng-container class="heading">Heading</ng-container>
-    <div class="body">
-        <h2>Body</h2>
-        <p>Some content here...</p>
-    </div>
-</bootstrap-panel> -->
-
-<!-- <like
-    [likesCount]="tweet.likesCount"
-    [isActive]="tweet.isLiked"></like> -->
-
-<div [hidden]="courses.length === 0">
-    List of Courses
-</div>
-<div [hidden]="courses.length > 0">
-    No Courses yet
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a
+        [class.active]="viewMode === 'map'"
+        class="nav-link"
+        (click)="viewMode='map'"
+        >
+            Map View
+        </a>
+    </li>
+    <li class="nav-item">
+        <a
+        [class.active]="viewMode === 'list'"
+        class="nav-link"
+        (click)="viewMode='list'"
+        >
+            List View
+        </a>
+    </li>
+</ul>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map View Content</div>
+    <div *ngSwitchCase="'list'">List View Content</div>
+    <div *ngSwitchDefault>Otherwise</div>
 </div>
