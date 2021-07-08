@@ -14,6 +14,7 @@ import { TitlecasingComponent } from './titlecasing/titlecasing.component';
 import { TitleCaseExceptPipe } from './titlecaseescept.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
+import { InputFormatDirective } from './input-format.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LikeComponent } from './like/like.component';
 
     SummaryPipe,
     TitleCaseExceptPipe,
-    LikeComponent
+    LikeComponent,
+    InputFormatDirective
   ],
   imports: [
     BrowserModule,
