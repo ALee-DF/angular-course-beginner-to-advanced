@@ -20,6 +20,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewCourseFormArrayComponent } from './new-course-form-array/new-course-form-array.component';
+import { NewCourseFormBuilderComponent } from './new-course-form-builder/new-course-form-builder.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { NewCourseFormArrayComponent } from './new-course-form-array/new-course-
     ContactFormComponent,
     NewCourseFormComponent,
     SignupFormComponent,
-    NewCourseFormArrayComponent
+    NewCourseFormArrayComponent,
+    NewCourseFormBuilderComponent
   ],
   imports: [
     BrowserModule,
