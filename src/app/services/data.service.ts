@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { AppError } from '../common/app-error';
 import { BadInput } from '../common/bad-input';
 import { NotFoundError } from '../common/not-found';
@@ -15,9 +15,14 @@ export class DataService {
 
   }
 
-  get() {
+  getAll() {
     return this.http.get(this.url).pipe(
-      catchError(this.handleError)
+        // Completely Unnecessary since we receive an array of JavaScript objects already. No fixing needed here or for the methods below.
+        // map((response: any) => {
+        //     console.log(response);
+        //     return response.json();
+        // }),
+        catchError(this.handleError)
     );
   }
 
