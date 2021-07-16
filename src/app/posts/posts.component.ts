@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-posts',
@@ -8,15 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
   posts: any;
-  private url = 'https://jsonplaceholder.typicode.com/posts';
 
   // posts: any[]; doesn't work and results in a compilation error. Better to use interface instead.
 
-  constructor(private http: HttpClient) {
+  constructor(private service: PostService) {
   }
 
   ngOnInit() {
-    this.http.get(this.url)
+    this.service.getPosts()
       .subscribe(response => {
         this.posts = response;
       });
@@ -27,7 +26,8 @@ export class PostsComponent implements OnInit {
       title: input.value
     };
     input.value = '';
-    this.http.post(this.url, post)
+
+    this.service.createPost(post)
       .subscribe(response => {
         post['id'] = response['id'];
         this.posts.splice(0, 0, post);
@@ -35,14 +35,14 @@ export class PostsComponent implements OnInit {
   }
 
   updatePost(post) {
-    this.http.patch(`${this.url}/${post.id}`, { isRead: true })
+    this.service.updatePost(post)
       .subscribe(response => {
         console.log(response);
       });
   }
 
   deletePost(post) {
-    this.http.delete(`${this.url}/${post.id}`)
+    this.service.deletePost(post.id)
       .subscribe(respone => {
         const index = this.posts.indexOf(post);
         this.posts.splice(index, 1);

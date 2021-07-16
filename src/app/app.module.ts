@@ -24,6 +24,7 @@ import { NewCourseFormArrayComponent } from './new-course-form-array/new-course-
 import { NewCourseFormBuilderComponent } from './new-course-form-builder/new-course-form-builder.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PostsComponent } from './posts/posts.component';
+import { PostService } from './services/post.service';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { PostsComponent } from './posts/posts.component';
     ReactiveFormsModule,
   ],
   providers: [
+    PostService,
     CoursesService,
     AuthorsService
   ],
