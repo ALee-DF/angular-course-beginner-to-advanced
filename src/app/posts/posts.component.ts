@@ -1,19 +1,22 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
-export class PostsComponent {
+export class PostsComponent implements OnInit {
   posts: any;
   private url = 'https://jsonplaceholder.typicode.com/posts';
 
   // posts: any[]; doesn't work and results in a compilation error. Better to use interface instead.
 
   constructor(private http: HttpClient) {
-    http.get(this.url)
+  }
+
+  ngOnInit() {
+    this.http.get(this.url)
       .subscribe(response => {
         this.posts = response;
       });
