@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PostService {
-  private url = 'https://abcdjsonplaceholder.typicode.com/posts';
+  private url = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(private http: HttpClient) {
 
@@ -23,7 +23,7 @@ export class PostService {
     return this.http.patch(`${this.url}/${post.id}`, { isRead: true });
   }
 
-  deletePost(id:number) {
+  deletePost(id) {
     return this.http.delete(`${this.url}/${id}`);
   }
 }
