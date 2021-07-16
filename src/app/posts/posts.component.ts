@@ -18,6 +18,9 @@ export class PostsComponent implements OnInit {
     this.service.getPosts()
       .subscribe(response => {
         this.posts = response;
+      }, error => {
+        alert('An unexpected error occured.');
+        console.log(error);
       });
   }
 
@@ -31,6 +34,9 @@ export class PostsComponent implements OnInit {
       .subscribe(response => {
         post['id'] = response['id'];
         this.posts.splice(0, 0, post);
+      }, error => {
+        alert('An unexpected error occured.');
+        console.log(error);
       });
   }
 
@@ -38,6 +44,9 @@ export class PostsComponent implements OnInit {
     this.service.updatePost(post)
       .subscribe(response => {
         console.log(response);
+      }, error => {
+        alert('An unexpected error occured.');
+        console.log(error);
       });
   }
 
@@ -46,6 +55,9 @@ export class PostsComponent implements OnInit {
       .subscribe(() => {
         const index = this.posts.indexOf(post);
         this.posts.splice(index, 1);
+      }, error => {
+        alert('An unexpected error occured.');
+        console.log(error);
       });
   }
 }
