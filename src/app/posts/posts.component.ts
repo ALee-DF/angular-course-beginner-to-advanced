@@ -22,10 +22,6 @@ export class PostsComponent implements OnInit {
       .subscribe(
         response => {
           this.posts = response;
-        },
-        error => {
-          alert('An unexpected error occured.');
-          console.log(error);
         });
   }
 
@@ -46,8 +42,7 @@ export class PostsComponent implements OnInit {
             // this.form.setERrors(error.originalError);
           }
           else {
-            alert('An unexpected error occured.');
-            console.log(error);  
+            throw error;
           }
         });
   }
@@ -59,8 +54,7 @@ export class PostsComponent implements OnInit {
           console.log(response);
         },
         error => {
-          alert('An unexpected error occured.');
-          console.log(error);
+          throw error;
         });
   }
 
@@ -76,8 +70,7 @@ export class PostsComponent implements OnInit {
             alert('This post has already been deleted.');
           }
           else {
-            alert('An unexpected error occured.');
-            console.log(error);  
+            throw error;
           }
         });
   }
